@@ -1,0 +1,1644 @@
+/* 全局样式 */
+:root {
+    --primary-color: #0d1b2a;
+    --primary-light: #1b263b;
+    --secondary-color: #415a77;
+    --accent-color: #e0b354;
+    --accent-light: #f4d03f;
+    --light-color: #f8f5f0;
+    --light-bg: #ffffff;
+    --text-color: #1a1a2e;
+    --text-light: #666666;
+    --border-color: #d9d9d9;
+    --shadow-color: rgba(13, 27, 42, 0.1);
+    --card-bg: #ffffff;
+    --header-bg: rgba(255, 255, 255, 0.98);
+    --footer-bg: #0a141e;
+    --success-color: #27ae60;
+    --gradient-dark: linear-gradient(135deg, #0a141e 0%, #1b263b 100%);
+    --gradient-gold: linear-gradient(135deg, #e0b354 0%, #f4d03f 100%);
+    --gradient-blue: linear-gradient(135deg, #1b263b 0%, #415a77 100%);
+    
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 30px;
+    --radius-full: 50%;
+    
+    --shadow-sm: 0 2px 8px var(--shadow-color);
+    --shadow-md: 0 5px 20px var(--shadow-color);
+    --shadow-lg: 0 10px 40px var(--shadow-color);
+    --shadow-xl: 0 20px 60px rgba(13, 27, 42, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Noto Serif SC', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--light-bg);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-subtitle {
+    display: inline-block;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.section-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--accent-color);
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-family: 'Ma Shan Zheng', cursive;
+    line-height: 1.2;
+}
+
+.section-description {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* 按钮样式 */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius-xl);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.primary-btn {
+    background: var(--gradient-gold);
+    color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.primary-btn:hover {
+    background: var(--accent-color);
+}
+
+.secondary-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* 导航栏 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--header-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 999;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.logo-icon {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.logo-text h1 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin: 0;
+    font-family: 'Ma Shan Zheng', cursive;
+}
+
+.brand-tagline {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 2px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-color);
+    background: rgba(224, 179, 84, 0.1);
+}
+
+.nav-link.cta-button {
+    padding: 8px 24px;
+    font-size: 0.9rem;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* 英雄区域 */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 120px 0 60px;
+    background: var(--gradient-dark);
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(13, 27, 42, 0.9);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-badge {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.hero-badge span {
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-title-main {
+    font-size: 4.5rem;
+    font-family: 'Ma Shan Zheng', cursive;
+    display: block;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.hero-title-accent {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    margin-bottom: 50px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.hero-quote {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--accent-color);
+    position: relative;
+}
+
+.hero-quote p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.hero-quote i.fa-quote-left {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: var(--accent-color);
+    opacity: 0.5;
+}
+
+.hero-quote i.fa-quote-right {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    color: var(--accent-color);
+    opacity: 0.5;
+}
+
+/* 宏图愿景 */
+.vision-section {
+    background: var(--light-bg);
+}
+
+.vision-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.vision-image {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.vision-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.vision-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(13, 27, 42, 0.9), transparent);
+    color: white;
+}
+
+.overlay-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.vision-text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.vision-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.vision-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.vision-details h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* 天医道人 */
+.tianyi-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.tianyi-profile {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 50px;
+    background: white;
+    padding: 50px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+}
+
+.tianyi-image {
+    text-align: center;
+}
+
+.tianyi-avatar {
+    position: relative;
+}
+
+.avatar-circle {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: var(--gradient-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+.avatar-real-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.avatar-icon-bg {
+    position: absolute;
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.15);
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tianyi-badge {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient-gold);
+    color: var(--primary-color);
+    padding: 10px 25px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.tianyi-header h3 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-family: 'Ma Shan Zheng', cursive;
+}
+
+.tianyi-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.tianyi-tag {
+    padding: 8px 18px;
+    background: rgba(224, 179, 84, 0.1);
+    border-radius: var(--radius-full);
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    border: 1px solid rgba(224, 179, 84, 0.3);
+}
+
+.tianyi-quote {
+    background: rgba(224, 179, 84, 0.05);
+    padding: 25px;
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--accent-color);
+    margin-bottom: 30px;
+}
+
+.tianyi-quote p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.tianyi-quote p:last-child {
+    margin-bottom: 0;
+}
+
+.tianyi-mission h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tianyi-mission ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tianyi-mission li {
+    padding: 12px 0;
+    padding-left: 35px;
+    position: relative;
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.tianyi-mission li:last-child {
+    border-bottom: none;
+}
+
+.tianyi-mission li i {
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+/* 寻找天骄 */
+.recruit-section {
+    background: var(--light-bg);
+}
+
+.recruit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.recruit-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-top: 4px solid var(--accent-color);
+}
+
+.recruit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.recruit-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.recruit-card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.recruit-card ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+}
+
+.recruit-card li {
+    padding: 8px 0;
+    color: var(--text-light);
+    position: relative;
+    padding-left: 25px;
+}
+
+.recruit-card li:before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.recruit-call {
+    background: var(--gradient-blue);
+    border-radius: var(--radius-lg);
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+.call-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.call-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 传承体系 */
+.system-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.system-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.timeline-number {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    box-shadow: var(--shadow-md);
+}
+
+.timeline-content {
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    flex: 1;
+}
+
+.timeline-content h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.timeline-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* 核心使命 */
+.mission-section {
+    background: var(--light-bg);
+}
+
+.mission-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.mission-image {
+    position: relative;
+}
+
+.mission-img-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* =========================================== */
+/* 中医传承视频样式 - 在图片区域播放 */
+/* =========================================== */
+
+/* 视频包装器 - 确保视频充满容器 */
+.video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.tcm-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.video-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.video-play-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient-gold);
+    border: none;
+    color: var(--primary-color);
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-play-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(224, 179, 84, 0.7);
+}
+
+/* 原有的徽章标签样式调整，确保在视频上方显示 */
+.mission-badge {
+    position: absolute;
+    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 1rem;
+    z-index: 3;
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mission-badge:nth-child(2) {
+    top: 30px;
+    left: 30px;
+}
+
+.mission-badge:nth-child(3) {
+    top: 30px;
+    right: 30px;
+}
+
+.mission-badge:nth-child(4) {
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 移除原有的伪元素内容（"中医传承"文字） */
+.mission-img-container:before {
+    content: "";
+}
+
+/* 视频播放器控件美化 */
+.tcm-video::-webkit-media-controls-panel {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.tcm-video::-webkit-media-controls-play-button {
+    color: var(--accent-color);
+}
+
+.tcm-video::-webkit-media-controls-current-time-display,
+.tcm-video::-webkit-media-controls-time-remaining-display {
+    color: white;
+}
+
+/* =========================================== */
+/* 视频样式结束 */
+/* =========================================== */
+
+.mission-features {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.feature-text h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+/* 视频加载状态 */
+.video-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px 25px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.video-loading.active {
+    opacity: 1;
+}
+
+.video-loading i {
+    font-size: 1.2rem;
+}
+
+/* 视频备用方案 */
+.video-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.fallback-content {
+    max-width: 400px;
+}
+
+.fallback-content i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.fallback-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.fallback-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.fallback-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.fallback-content li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.fallback-content li:before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.fallback-content a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.fallback-content a:hover {
+    text-decoration: underline;
+}
+
+.retry-video-btn {
+    margin-top: 15px;
+}
+/* 同修共进 */
+.partner-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.partner-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.partner-card:hover {
+    transform: translateY(-10px);
+}
+
+.partner-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.partner-card h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.action-plan {
+    background: var(--gradient-blue);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    color: white;
+}
+
+.action-plan h3 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.plan-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.plan-step {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.plan-step p {
+    flex: 1;
+    line-height: 1.6;
+}
+
+/* 加入传承 */
+.contact-section {
+    background: var(--light-bg);
+}
+
+.contact-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 50px;
+    box-shadow: var(--shadow-xl);
+}
+
+.form-intro {
+    margin-bottom: 40px;
+}
+
+.form-intro h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-intro p {
+    color: var(--text-light);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.inspiration {
+    background: rgba(224, 179, 84, 0.05);
+    padding: 25px;
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--accent-color);
+}
+
+.inspiration h4 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.inspiration ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.inspiration li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: var(--text-light);
+}
+
+.inspiration li:before {
+    content: "→";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.recruit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 14px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+    color: var(--text-color);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(224, 179, 84, 0.1);
+}
+
+.char-count {
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 5px;
+}
+
+.form-agreement {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.form-agreement input {
+    margin-top: 5px;
+}
+
+.form-agreement label {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+}
+
+/* 页脚 */
+.footer {
+    background: var(--footer-bg);
+    color: white;
+    padding: 70px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-brand {
+    padding-right: 30px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.footer-logo i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+.footer-logo div h3 {
+    font-size: 1.8rem;
+    color: white;
+    margin: 0 0 5px 0;
+    font-family: 'Ma Shan Zheng', cursive;
+}
+
+.footer-logo div p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.footer-description {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.footer-motto p {
+    color: var(--accent-color);
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.footer-section h4 {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: white;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h4:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--accent-color);
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 12px;
+}
+
+.footer-section a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-section a:hover {
+    color: var(--accent-color);
+}
+
+.final-quote {
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.quote-author {
+    text-align: right;
+    margin-top: 10px;
+    color: var(--accent-color);
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.copyright p {
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+/* 模态框 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 27, 42, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: var(--radius-lg);
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    padding: 25px 30px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.modal-body {
+    padding: 30px;
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: var(--success-color);
+    margin-bottom: 20px;
+}
+
+.modal-body h4 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.modal-body p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.modal-quote {
+    margin: 25px 0;
+    padding: 20px;
+    background: rgba(224, 179, 84, 0.05);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--accent-color);
+    text-align: left;
+}
+
+.modal-quote p {
+    margin-bottom: 10px;
+}
+
+.modal-actions {
+    margin-top: 30px;
+}
+
+/* 页面加载 */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.page-loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+    color: white;
+    max-width: 400px;
+}
+
+.loader-icon {
+    font-size: 4rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.loader-content h3 {
+    font-size: 2.5rem;
+    font-family: 'Ma Shan Zheng', cursive;
+    margin-bottom: 10px;
+}
+
+.loader-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.loader-progress {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--gradient-gold);
+    animation: loading 2s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .vision-content,
+    .mission-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .tianyi-profile {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 70px 0;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: var(--shadow-lg);
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .hero-title-main {
+        font-size: 3.5rem;
+    }
+    
+    .hero-title-accent {
+        font-size: 1.8rem;
+    }
+    
+    .hero-stats {
+        flex-wrap: wrap;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .timeline-number {
+        margin-bottom: 15px;
+    }
+    
+    .plan-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form-container {
+        padding: 30px 20px;
+    }
+    .mission-img-container {
+        height: 300px;
+    }
+    
+    .video-play-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .mission-badge {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+    }
+    
+    .video-loading {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title-main {
+        font-size: 2.8rem;
+    }
+    
+    /* ... 其他现有样式 ... */
+    
+    /* ★★★ 在这里添加小屏幕视频样式 ★★★ */
+    .mission-img-container {
+        height: 250px;
+    }
+    
+    .mission-badge {
+        padding: 6px 15px;
+        font-size: 0.8rem;
+    }
+}
+    
